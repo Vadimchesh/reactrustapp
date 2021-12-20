@@ -1,6 +1,13 @@
-# New Project
+<div align="center">
+# React Rust App <br>
+🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀
+</div>
+Main goal of this project is call rust function in the react app. 
+For bundle I have used Snowpack. You can find confiration setup in `snowpack.config.mjs`.
+Also we need wasm-bindgen package to import JavaScript things into Rust and export Rust things to JavaScript according the doc.
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+![React rust app](/doc/app.png?raw=true "React app")
+
 
 ## Available Scripts
 
@@ -9,17 +16,10 @@
 Runs the app in the development mode.
 Open http://localhost:8080 to view it in the browser.
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
-
 ### npm run build
 
 Builds a static copy of your site to the `build/` folder.
 Your app is ready to be deployed!
 
-**For the best production performance:** Add a build bundler plugin like "@snowpack/plugin-webpack" to your `snowpack.config.mjs` config file.
-
-### npm test
-
-Launches the application test runner.
-Run with the `--watch` flag (`npm test -- --watch`) to run in interactive watch mode.
+### npx serve -s build
+![Serve](/doc/serve.png?raw=true "Serve")

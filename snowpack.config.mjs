@@ -3,8 +3,19 @@ export default {
   mount: {
     public: { url: '/', static: true },
     src: { url: '/dist' },
+    pkg: { url: '/pkg' },
   },
-  plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-dotenv'],
+  plugins: [
+    '@snowpack/plugin-react-refresh',
+    '@snowpack/plugin-dotenv',
+    '@snowpack/plugin-sass',
+    [
+      '@emily-curry/snowpack-plugin-wasm-pack',
+      {
+        projectPath: '.',
+      },
+    ],
+  ],
   routes: [
     /* Enable an SPA Fallback in development: */
     // {"match": "routes", "src": ".*", "dest": "/index.html"},

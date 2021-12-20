@@ -1,37 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import init, { greet } from '../pkg';
+
+import './App.scss';
 
 function App() {
-  // Create the count state.
-  const [count, setCount] = useState(0);
-  // Create the counter (+1 every second).
-  useEffect(() => {
-    const timer = setTimeout(() => setCount(count + 1), 1000);
-    return () => clearTimeout(timer);
-  }, [count, setCount]);
-  // Return the App component.
+  const [name, setName] = useState('');
+
+  const changeName = ({ target: { value } }) => setName(value);
+  const sayHello = async (e) => {
+    e.preventDefault();
+    const trimmed = name.trim();
+    if (!trimmed) return;
+
+    await init();
+    greet(name);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          Page has been open for <code>{count}</code> seconds.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+    <div className="app">
+      <h1>React Rust App</h1>
+      <form onSubmit={sayHello}>
+        <fieldset>
+          <label htmlFor="name">Enter your name</label>
+          <input
+            type="text"
+            id="name"
+            autoComplete="off"
+            value={name}
+            onChange={changeName}
+            autoFocus
+          />
+        </fieldset>
+        <button>Say hello</button>
+      </form>
     </div>
   );
 }
