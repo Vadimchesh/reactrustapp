@@ -1,5 +1,5 @@
 <div align="center">
-# React Rust App <br>
+<h1>React Rust App</h1> <br>
 🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀🦀
 </div>
 Main goal of this project is call rust function in the react app. 
