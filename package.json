@@ -1,4 +1,16 @@
 {
+  "name": "reactrustrpp",
+  "version": "1.0.0",
+  "description": "Run Rust in Reactg app",
+  "repository": {
+    "type": "git"
+  },
+  "author": "Vadzim Lindo",
+  "license": "MIT",
+  "keywords": [
+    "Rust",
+    "React"
+  ],
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
